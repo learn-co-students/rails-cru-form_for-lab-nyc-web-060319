@@ -27,19 +27,25 @@ Rails.application.routes.draw do
 
   get 'genres/show'
 
-  get 'artists/new'
+  get 'genres/:id', to: 'genres#show'
+
+  get 'artists/new', to: 'artists#new', as: :new_artist
 
   get 'artists/create'
+  post 'artists/create', to: 'artists#create'
 
   get 'artists/update'
-
-  get 'artists/edit'
+  post 'artists/update', to: 'artists#update'
 
   get 'artists/destroy'
 
   get 'artists/index'
 
-  get 'artists/show'
+  get 'artists/show', to: 'artists#show', as: :show_artist
+
+  get 'artists/edit/:id', to: 'artists#edit'
+
+  get 'artists/:id', to: 'artists#show'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
