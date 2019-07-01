@@ -1,6 +1,6 @@
 <h1>Songs</h1>
-<p>Find me in app/views/songs/index.html.erb</p>
-
-<%Song.all.each do |song|%>
-<li><%=song.name%></li>
+<p>
+<%@songs.each do |song|%>
+<li>Name: <%=song.name%></li>
 <%end%>
+</p>

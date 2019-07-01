@@ -9,8 +9,15 @@ class ArtistsController < ApplicationController
     redirect_to show_artist_path(@artist.id)
   end
 
+  def show
+    # byebug
+    @artist = Artist.find(params[:id])
+  end
+
   def update
     @artist = Artist.find(params[:id])
+    @artist.update(artist_params(params))
+    redirect_to show_artist_path(@artist)
     # byebug
   end
 
@@ -24,8 +31,7 @@ class ArtistsController < ApplicationController
   def index
   end
 
-  def show
-    # byebug
-    @artist = Artist.find(params[:id])
+  def artist_params(params)
+    params.require(:artist).permit(:name, :bio)
   end
 end
