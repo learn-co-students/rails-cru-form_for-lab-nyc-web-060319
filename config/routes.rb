@@ -55,6 +55,7 @@ Rails.application.routes.draw do
   get 'artists/edit/:id', to: 'artists#edit', as: :edit_artist
 
   get 'artists/:id', to: 'artists#show', as: :show_artist
+  get 'artists/:id', to: 'artists#show', as: :artist
   patch 'artists/update/:id', to: 'artists#update'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
