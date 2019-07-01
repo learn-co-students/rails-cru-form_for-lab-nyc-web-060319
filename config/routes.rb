@@ -33,7 +33,8 @@ Rails.application.routes.draw do
 
   # get 'genres/show', to: 'genres#show', as: :show_genre
 
-  get 'genres/:id', to: 'genres#show', as: :show_genre  
+  get 'genres/:id', to: 'genres#show', as: :show_genre
+  get 'genres/show/:id', to: 'genres#show', as: :genre
 
   patch 'genres/update/:id', to: 'genres#update'
 
