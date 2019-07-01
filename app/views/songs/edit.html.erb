@@ -1,0 +1,7 @@
+Song Edit Form
+<%= form_for @song do |s| %>
+Name: <%= s.text_field :name %>
+Artist Id: <%= s.number_field :artist_id %>
+Genre Id: <%= s.number_field :genre_id %>
+<%= s.submit %>
+<% end  %>
