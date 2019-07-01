@@ -1,2 +1,7 @@
 <h1>Artists#create</h1>
 <p>Find me in app/views/artists/create.html.erb</p>
+<%=form_tag '/artists' do%>
+    <%=text_field_tag 'artist[name]'%>
+    <%=text_field_tag 'artist[bio]'%>
+    <%=submit_tag 'Create Artist'%>
+<%end%>

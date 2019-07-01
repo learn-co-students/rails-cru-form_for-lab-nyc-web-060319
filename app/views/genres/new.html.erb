@@ -1,2 +1,6 @@
 <h1>Genres#new</h1>
 <p>Find me in app/views/genres/new.html.erb</p>
+<%=form_tag '/genres' do%>
+    <%=text_field_tag 'genre[name]'%>
+    <%=submit_tag "Create Genre"%>
+<%end%>

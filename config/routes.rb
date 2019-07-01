@@ -1,33 +1,35 @@
 Rails.application.routes.draw do
-  get 'songs/new'
 
-  get 'songs/create'
+  post 'songs', to: 'songs#create', as: :create_song
+  get 'songs/new', to: 'songs#new', as: :new_song
+
+  # get 'songs/create'
 
   get 'songs/update'
 
-  get 'songs/edit'
+  get 'songs/edit/:id', to: 'songs#edit', as: :edit_song
 
   get 'songs/destroy'
 
-  get 'songs/index'
+  get 'songs/index', to: 'songs#index', as: :songs
 
-  get 'songs/show'
+  get 'songs/show/:id', to: 'songs#show', as: :song
 
-  get 'genres/new'
+  get 'genres/new', to: 'genres#new', as: :new_genre
 
-  get 'genres/create'
+  post 'genres', to: 'genres#create', as: :create_genre
 
   get 'genres/update'
 
-  get 'genres/edit'
+  get 'genres/edit/:id', to: 'genres#edit', as: :edit_genre
 
   get 'genres/destroy'
 
   get 'genres/index'
 
-  get 'genres/show'
+  # get 'genres/show', to: 'genres#show', as: :show_genre
 
-  get 'genres/:id', to: 'genres#show'
+  get 'genres/:id', to: 'genres#show', as: :show_genre  
 
   get 'artists/new', to: 'artists#new', as: :new_artist
 
@@ -39,11 +41,11 @@ Rails.application.routes.draw do
 
   get 'artists/destroy'
 
-  get 'artists/index'
+  get 'artists/index', to: 'artists#index', as: :artists
 
-  get 'artists/show', to: 'artists#show', as: :show_artist
+  get 'artists/show/:id', to: 'artists#show', as: :show_artist
 
-  get 'artists/edit/:id', to: 'artists#edit'
+  get 'artists/edit/:id', to: 'artists#edit', as: :edit_artist
 
   get 'artists/:id', to: 'artists#show'
 

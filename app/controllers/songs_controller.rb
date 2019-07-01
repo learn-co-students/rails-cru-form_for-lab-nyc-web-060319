@@ -9,6 +9,8 @@ class SongsController < ApplicationController
   end
 
   def edit
+    @song = Song.find(params[:id])
+    # byebug
   end
 
   def destroy
